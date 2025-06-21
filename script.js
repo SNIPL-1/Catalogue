@@ -55,11 +55,13 @@ function renderCatalogue(data) {
       const name = entries[0]["Item Name"];
       const specs = entries[0]["Specs"];
 
-      block.innerHTML += `
-  <div class="item-header-row">
-    <div><strong>Item Code:</strong> ${entries[0]["Item Code"]}</div>
-    <div><strong>HSN Code:</strong> ${entries[0]["HSN Code"]}</div>
-    <div><strong>${name}</strong></div>
+block.innerHTML += `
+  <div class="item-header">
+    <div class="item-meta">
+      <span><strong>Item Code:</strong> ${entries[0]["Item Code"]}</span>
+      <span><strong>HSN Code:</strong> ${entries[0]["HSN Code"]}</span>
+    </div>
+    <div class="item-name">${name}</div>
   </div>
 `;
       block.appendChild(img);
