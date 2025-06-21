@@ -55,20 +55,27 @@ function renderCatalogue(data) {
       const name = entries[0]["Item Name"];
       const specs = entries[0]["Specs"];
 
-      block.innerHTML += `<h2>${name}</h2>`;
+      block.innerHTML += `
+  <div class="item-header-row">
+    <div><strong>Item Code:</strong> ${entries[0]["Item Code"]}</div>
+    <div><strong>HSN Code:</strong> ${entries[0]["HSN Code"]}</div>
+    <div><strong>${name}</strong></div>
+  </div>
+`;
       block.appendChild(img);
       block.innerHTML += `<p><em>${specs}</em></p>`;
 
       const table = document.createElement("table");
-      table.innerHTML = `
-        <tr>
-          <th>Variant Code</th>
-          <th>Description</th>
-          <th>Price/Unit</th>
-          <th>Unit</th>
-          <th>WhatsApp</th>
-        </tr>
-      `;
+table.innerHTML = `
+  <tr>
+    <th>Variant Code</th>
+    <th>Description</th>
+    <th>Price/Unit</th>
+    <th>Unit</th>
+    <th>MOQ</th>
+    <th>WhatsApp</th>
+  </tr>
+`;
 
       entries.forEach(entry => {
         const msg = encodeURIComponent(
@@ -81,6 +88,7 @@ function renderCatalogue(data) {
           <td>${entry["Description"]}</td>
           <td>${entry["Price/Unit"]}</td>
           <td>${entry["Unit"]}</td>
+	  <td>${entry["MOQ"]}</td>
           <td><a target="_blank" href="https://wa.me/917986297302?text=${msg}"><i class="fab fa-whatsapp"></i>WhatsApp</a></td>
         `;
         table.appendChild(tr);
