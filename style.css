@@ -16,9 +16,15 @@ body {
   flex-wrap: wrap;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
 .logo {
-  height: 80px;
-  margin-right: 1rem;
+  max-height: 80px; /* Adjust based on your design */
 }
 
 .company-center {
