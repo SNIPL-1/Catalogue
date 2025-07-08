@@ -29,6 +29,7 @@ body {
 
 .company-center {
   text-align: center;
+  gap: 12px; 
 }
 
 .company-center h1 {
